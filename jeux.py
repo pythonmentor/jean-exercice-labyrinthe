@@ -21,10 +21,7 @@ def labyrinthe_charger_depuis_fichier(nom_fichier):
         "arrivee": arrivee
     }
         
-def main():
-    with open("labyrinthe.txt", "r") as mon_fichier:
-        mon_labyrinthe = mon_fichier.readlines()
-        
+def main():      
         print("Lecture du fichier labyrinthe.txt ligne par ligne:\n")
         print(mon_labyrinthe)
 
