@@ -1,18 +1,18 @@
+# Lecture du fichier labyrinthe.txt
+with open("labyrinthe.txt", "r") as mon_fichier:
+     mon_labyrinthe = mon_fichier.readlines()
+# Chargement du labyrinthe depuis le fichier labyrinthe.txt
 def labyrinthe_charger_depuis_fichier(nom_fichier):
 
 
     return {
-        "chemins": valeur, 
-        "murs": valeur, 
-        "hauteur": valeur, 
-        "largeur": valeur, 
-        "depart": valeur, 
-        "arrivee": valeur
+        "chemins": chemins, 
+        "murs": murs, 
+        "hauteur": hauteur, 
+        "largeur": largeur, 
+        "depart": depart, 
+        "arrivee": arrivee
     }
-
-# Lecture du fichier labyrinthe.txt
-with open("labyrinthe.txt", "r") as mon_fichier:
-     mon_labyrinthe = mon_fichier.readlines()
         
 def main():
     chemins = []
@@ -70,3 +70,4 @@ def depart_et_arrivee_du_joueur():
 
 main()
 depart_et_arrivee_du_joueur()
+labyrinthe_charger_depuis_fichier("labyrinthe.txt")
