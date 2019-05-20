@@ -10,7 +10,10 @@ def labyrinthe_charger_depuis_fichier(nom_fichier):
         "arrivee": valeur
     }
 
-
+# Lecture du fichier labyrinthe.txt
+with open("labyrinthe.txt", "r") as mon_fichier:
+     mon_labyrinthe = mon_fichier.readlines()
+        
 def main():
     chemins = []
     murs = []
@@ -44,4 +47,26 @@ def main():
         print("La hauteur vaut: ", hauteur)
 
         
+        
+# Détermination de la position de départ et d'arrivée du joueur
+def depart_et_arrivee_du_joueur():
+    print("Determination de la position de départ et d'arrivée du joueur: ")
+    chaine = " ".join(mon_labyrinthe)
+    #depart
+    depart = chaine.replace("...#######", "D..#######").strip()
+
+
+    f = open("labyrinthe.txt", "w")
+    ecriture_1 = f.write(depart)
+
+    # arrivee
+    arrivee = depart.replace("########.#", "########A#").strip()
+
+    f = open("labyrinthe.txt", "w")
+    ecriture_1 = f.write(arrivee)
+
+    print("Position: \n", arrivee)
+
+
 main()
+depart_et_arrivee_du_joueur()
