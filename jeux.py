@@ -1,42 +1,36 @@
-
-with open("labyrinthe.txt", "r") as mon_fichier:
-    mon_labyrinthe = mon_fichier.readlines()
-
-    print("1. Lecture du fichier labyrinthe.txt ligne par ligne:\n")
-
-    for i, elt in enumerate(mon_labyrinthe):
-        print(i, elt)
+def labyrinthe_charger_depuis_fichier(nom_fichier):
 
 
-    with open("labyrinthe.txt", "r") as fichier:
-        mon_fichier_2 = fichier.readline().strip()
-
-        print("4. Calcul de la largeur et la hauteur du labyrinthe:")
-
-        largeur = len(mon_fichier_2)
-        print("La largeur du labyrinthe vaut:", largeur)
-
-       
-        mon_fichier_3 = fichier.readlines()
-
-        aire_du_labyrinthe = len("".join(mon_fichier_3))
+    return {
+        "chemins": valeur, 
+        "murs": valeur, 
+        "hauteur": valeur, 
+        "largeur": valeur, 
+        "depart": valeur, 
+        "arrivee": valeur
+    }
 
 
-        hauteur = aire_du_labyrinthe / largeur
-        print("La hauteur vaut: ", hauteur)
+def main():
+    chemins = []
+    murs = []
+    largeur = None
+    hauteur = None
 
+    with open("labyrinthe.txt", "r") as mon_fichier:
+        mon_labyrinthe = mon_fichier.readlines()
+        hauteur = len(mon_labyrinthe)
+        largeur = len(mon_labyrinthe[0].strip())
+        print(mon_labyrinthe)
 
-         
-        
+        print("1. Lecture du fichier labyrinthe.txt ligne par ligne:\n")
 
-
-        
-        
-        
-
-   
-
-   
+        for i, ligne in enumerate(mon_labyrinthe):
+            for j, caractere in enumerate(ligne.strip()):
+                if caractere == '.':
+                    chemins.append((i, j))
+                elif caractere == '#':
+                    murs.append((i, j))
 
         
-
+main()
