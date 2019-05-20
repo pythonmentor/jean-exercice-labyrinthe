@@ -21,16 +21,23 @@ def main():
         mon_labyrinthe = mon_fichier.readlines()
         hauteur = len(mon_labyrinthe)
         largeur = len(mon_labyrinthe[0].strip())
+
+        print("Lecture du fichier labyrinthe.txt ligne par ligne:\n")
         print(mon_labyrinthe)
 
-        print("1. Lecture du fichier labyrinthe.txt ligne par ligne:\n")
-
+        print("Determination de la position des chemins et murs: ")
         for i, ligne in enumerate(mon_labyrinthe):
             for j, caractere in enumerate(ligne.strip()):
                 if caractere == '.':
                     chemins.append((i, j))
+                    
                 elif caractere == '#':
                     murs.append((i, j))
+                   
+
+            print("Les chemins ", chemins,)
+            print("Les murs", murs)
+
 
         
 main()
